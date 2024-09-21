@@ -26,10 +26,10 @@
 
         <!--Lower Section-->
         <div id="lower-left" class="sections">
-            <form>
-                    <label for="textTester">Text Tester: </label>
-                    <input type="text" id="text-tester">
-                    <input id="validate-button" type="submit" value="Validate Text">
+            <form name="validateText" onsubmit="validateForm()">
+                    <label for="validateText">Text Tester: </label>
+                    <input type="text" id="textTester">
+                    <input id="validateButton" type="submit" value="Validate Text">
             </form>
         </div>
 
@@ -57,6 +57,20 @@
                 }
             }
         </script>
+        
+        <!--validateText-->
+        <script type="text/javascript">
+            function validateForm(){
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if(document.getElementById('textTester').value ==""){
+                    alert("There's nothing to Validate..");
+                }else if(validation.test(document.getElementById('textTester').value)){
+                    alert("No special characters allowed..");
+                }
+            }
+        </script>
+
+        <!--addText-->
 
     </body>
 </html>
