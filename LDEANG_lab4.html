@@ -7,7 +7,7 @@
 
     <body>
         <header>
-            <h1>INST377 - Lab 4</h1>
+            <h1 id="mainHeading">INST377 - Lab 4</h1>
         </header>
 
         <!--Upper Section-->
@@ -34,10 +34,7 @@
         </div>
 
         <div id="lower-right" class="sections">
-            <form>
-                <input id="add-text" type="submit" value="Add Text">
-            </form>
-
+                <button type="button" onclick="addText()">Add Text</button>
         </div>
 
         <!--alertMe-->
@@ -70,7 +67,17 @@
             }
         </script>
 
-        <!--addText-->
+        <!--addText--> 
+        <script type="text/javascript">
+            var textAdded = false
+            function addText(){
+                if(textAdded == false){
+                    document.getElementById('mainHeading').innerText += " - Adding Text";
+                    textAdded = true;
+                }
+                
+            }
+        </script>
 
     </body>
 </html>
