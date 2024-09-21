@@ -10,10 +10,10 @@
             <h1>INST377 - Lab 4</h1>
         </header>
 
-        <!--Section Left-->
+        <!--Upper Section-->
 
         <div id="upper-left" class="sections">
-            <form>
+            <form onsubmit="alertMe()">
                 <label for="name">Name: </label>
                 <input type="text" id="name">
                 <input id="alert" type="submit" value="Alert Me!">
@@ -21,11 +21,10 @@
         </div>
 
         <div id="upper-right" class="sections">
-            <form>
-                <input id="color" type="submit" value="Change Color">
-            </form>
+           <button onclick="changeColor()">Change Color</button>
         </div>
 
+        <!--Lower Section-->
         <div id="lower-left" class="sections">
             <form>
                     <label for="textTester">Text Tester: </label>
@@ -40,6 +39,24 @@
             </form>
 
         </div>
+
+        <!--alertMe-->
+        <script type="text/javascript">
+            function alertMe() {
+                alert("Hello " + document.getElementById('name').value + '!');
+            }
+        </script>
+
+        <!--changeColor-->
+        <script type="text/javascript">
+            function changeColor(){
+                if(document.body.style.backgroundColor == 'lightblue'){
+                    document.body.style.backgroundColor = 'green';
+                }else{
+                    document.body.style.backgroundColor = 'lightblue';
+                }
+            }
+        </script>
 
     </body>
 </html>
