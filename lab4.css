@@ -1,0 +1,31 @@
+body { 
+    background-color: lightblue;
+}
+
+.sections {
+    background-color: purple;
+    color: white;
+    float: left;
+    border: 2px solid white;
+    margin: 10px;
+    padding-top: 5px;
+    border-radius: 10px;
+    width: 40%; 
+    text-align: center;
+}
+
+#upper-right, #lower-right { 
+    padding: 5px;
+    width: 30%;
+}
+
+#upper-right button, #lower-right form {
+    margin: 1px
+}
+
+
+#lower-left{
+    clear: both;
+}
+
+

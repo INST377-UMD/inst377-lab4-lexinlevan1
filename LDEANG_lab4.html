@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>LAB4_LEXINDEANG</title>
+        
+        <link rel="stylesheet" href="lab4.css">             
+    </head>
+
+    <body>
+        <header>
+            <h1 id="mainHeading">INST377 - Lab 4</h1>
+        </header>
+
+        <!--Upper Section-->
+
+        <div id="upper-left" class="sections">
+            <form onsubmit="alertMe()">
+                <label for="name">Name: </label>
+                <input type="text" id="name">
+                <input id="alert" type="submit" value="Alert Me!">
+            </form>
+        </div>
+
+        <div id="upper-right" class="sections">
+           <button onclick="changeColor()">Change Color</button>
+        </div>
+
+        <!--Lower Section-->
+        <div id="lower-left" class="sections">
+            <form name="validateText" onsubmit="validateForm()">
+                    <label for="validateText">Text Tester: </label>
+                    <input type="text" id="textTester">
+                    <input id="validateButton" type="submit" value="Validate Text">
+            </form>
+        </div>
+
+        <div id="lower-right" class="sections">
+                <button type="button" onclick="addText()">Add Text</button>
+        </div>
+
+        <!--alertMe-->
+        <script type="text/javascript">
+            function alertMe() {
+                alert("Hello " + document.getElementById('name').value + '!');
+            }
+        </script>
+
+        <!--changeColor-->
+        <script type="text/javascript">
+            function changeColor(){
+                if(document.body.style.backgroundColor == 'lightblue'){
+                    document.body.style.backgroundColor = 'green';
+                }else{
+                    document.body.style.backgroundColor = 'lightblue';
+                }
+            }
+        </script>
+        
+        <!--validateText-->
+        <script type="text/javascript">
+            function validateForm(){
+                var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                if(document.getElementById('textTester').value ==""){
+                    alert("There's nothing to Validate..");
+                }else if(validation.test(document.getElementById('textTester').value)){
+                    alert("No special characters allowed..");
+                }
+            }
+        </script>
+
+        <!--addText--> 
+        <script type="text/javascript">
+            var textAdded = false
+            function addText(){
+                if(textAdded == false){
+                    document.getElementById('mainHeading').innerText += " - Adding Text";
+                    textAdded = true;
+                }
+                
+            }
+        </script>
+
+    </body>
+</html>
